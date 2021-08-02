@@ -1,0 +1,98 @@
+{
+  "data":{
+    "data":[
+      {
+      "name":"Piyush" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+       {
+      "name":"Ram" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+       {
+      "name":"Steaphen" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+       {
+      "name":"Kartik" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+       {
+      "name":"Anuj" ,
+      "age":21,
+      "rollNo":30,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzCtEn3SAdnVmJ5jGnX18Ie09Sl_yoaVONQ&usqp=CAU",
+      "status": true
+      },
+       {
+      "name":"Steave" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+       {
+      "name":"Kesri" ,
+      "age":21,
+      "rollNo":30,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzCtEn3SAdnVmJ5jGnX18Ie09Sl_yoaVONQ&usqp=CAU",
+      "status": true
+      },
+       {
+      "name":"Steave" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+      {
+      "name":"paul" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+      {
+      "name":"Iron Man" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+      {
+      "name":"Super Man" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+      {
+      "name":"Steave" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      },
+      {
+      "name":"Vision" ,
+      "age":21,
+      "rollNo":30,
+      "image": "/assets/images/sample.png",
+      "status": true
+      }
+
+    ]
+  }
+}

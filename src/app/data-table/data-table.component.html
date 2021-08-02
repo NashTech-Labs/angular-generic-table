@@ -1,0 +1,78 @@
+<ngx-datatable
+    #myTable
+    [class]="dataTableClass"
+    [rows]="rows"
+    [columnMode]="ColumnMode"
+    [headerHeight]="headerHeight"
+    [rowHeight]="rowHeight"
+    [footerHeight]="footerHeight"
+    [count]="page.count"
+    [offset]="page.offset"
+    [limit]="page.limit"
+    [externalPaging]="externalPagination"
+    (page)="handlePageChange($event)">
+    <ngx-datatable-column
+            *ngFor="let column of columnConfigs"
+            [sortable]="column.sortable"
+            [name]="column.name"
+            [cellClass]="column.cellClass"
+            [flexGrow]="column.flexGrow"
+            [width]="column.width"
+    >
+        <ng-template
+            let-row="row"
+            let-rowIndex="rowIndex"
+            let-expanded="expanded"
+            ngx-datatable-cell-template>
+            <ng-container [ngSwitch]="column.type">
+              <ng-container *ngSwitchCase='"image"'>
+                <img src={{row[column.prop]}} [matTooltip]="column.showTooltip ? column.tooltipText +  ' ' +row[column.prop] : ''"
+                (click)="onRowClick(row,column.bold)"
+                 style="width: 100px; height: 40px ; border-radius:5px;" >
+              </ng-container>
+                <span [matTooltip]="column.showTooltip ? column.tooltipText +  ' ' +row[column.prop] : ''" (click)="onRowClick(row,column.bold)"  *ngSwitchCase="'text'" [ngStyle]="column.style ? {'white-space': 'initial'} : {'white-space': 'pointer'}"  [ngClass]="column.bold? 'col-cell text-black {{column.prop}}' : 'col-cell {{column.prop}}'" >{{ row[column.prop]  || column.alternate }}</span>
+                <ng-container *ngSwitchCase="'button'">
+                    <a mat-button (click)="handleButtons($event, row , rowIndex, btn.value)" *ngFor="let btn of column.buttons">{{btn.label}}</a>
+                </ng-container>
+                <mat-slide-toggle (click)="$event.stopPropagation()" checked={{row[column.prop]}}  (change)="handleToggle($event ,rowIndex , row)"
+                                  *ngSwitchCase="'toggle'" class="col-cell {{column.prop}}"></mat-slide-toggle>
+            </ng-container>
+        </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-footer *ngIf="showFooter">
+        <ng-template
+                ngx-datatable-footer-template
+                let-rowCount="rowCount"
+                let-pageSize="pageSize"
+                let-selectedCount="selectedCount"
+                let-curPage="curPage"
+                let-offset="offset"
+                let-isVisible="isVisible">
+            <div class="page-count" style="color:rgba(0,0,0,.54)">
+                <div class="d-flex"style="align-items: baseline;" >
+                                  <span class="d-flex" style="align-items: baseline;">
+                                    <label class="mr-2">Items per page : </label>
+                                    <select (change)="handleLimitChange($event.target['value'])" class="" [(ngModel)]="page.limit" >
+                                      <option [value]="item.value"  *ngFor="let item of pageLimitOptions; let i=index">{{item.value}}</option>
+                                    </select>
+                                  </span>
+                    <span class="ml-2">
+                                    Total records : {{rowCount}}
+                                </span>
+                </div>
+            </div>
+            <datatable-pager
+                    [pagerLeftArrowIcon]="'datatable-icon-left'"
+                    [pagerRightArrowIcon]="'datatable-icon-right'"
+                    [pagerPreviousIcon]="'datatable-icon-prev'"
+                    [pagerNextIcon]="'datatable-icon-skip'"
+                    [page]="curPage"
+                    [size]="pageSize"
+                    [count]="rowCount"
+                    [hidden]="!((rowCount / pageSize) > 1)"
+                    (change)="myTable.onFooterPage($event)">
+            </datatable-pager>
+        </ng-template>
+    </ngx-datatable-footer>
+</ngx-datatable>

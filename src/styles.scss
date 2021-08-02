@@ -1,0 +1,55 @@
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+$black:black;
+$border-top-color:rgba(0, 0, 0, 0.12);
+$header-bg-color: #fafbfc;
+$table-header-font:13px;
+$table-body-font:13px;
+
+.ngx-datatable.material {
+    box-shadow: none;
+
+    .datatable-header .datatable-header-cell {
+        color: $black;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: $border-top-color;
+        background-color: $header-bg-color;
+        font-size: $table-header-font;
+        line-height: 0.625;
+    }
+
+    .datatable-body .datatable-body-row>div {
+        display: flex;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: $border-top-color;
+    }
+
+    .datatable-body .datatable-body-row .datatable-body-cell {
+        font-size: $table-body-font;
+        line-height: 2;
+    }
+
+    .datatable-footer{
+        border: none;
+        overflow: hidden;
+        .datatable-pager {
+            flex: 1 1 60%;
+            text-align: right;
+        }
+        .page-count {
+            flex: 1 1 40%;
+        }
+    }
+
+
+}
+
+
+// .ngx-datatable.material.single-selection .datatable-body-row.active, .ngx-datatable.material.single-selection .datatable-body-row.active .datatable-row-group, .ngx-datatable.material.multi-selection .datatable-body-row.active, .ngx-datatable.material.multi-selection .datatable-body-row.active .datatable-row-group, .ngx-datatable.material.multi-click-selection .datatable-body-row.active, .ngx-datatable.material.multi-click-selection .datatable-body-row.active .datatable-row-group {
+//     background-color: grey;
+//     color: #fff;
+// }

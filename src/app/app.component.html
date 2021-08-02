@@ -1,0 +1,14 @@
+  <ng-container *ngIf="studentData && studentData?.length;">
+                <app-data-table
+                 [ColumnMode]=ColumnMode
+                [rows]="studentData" [page]=page
+                [columnConfigs]= columnConfig
+                [pageLimitOptions]=pageLimitOptions
+                (pageChange)="setPage($event)"
+                (limitChange)="limitChange($event)"
+                (toggleChange)="toggleChange($event)"
+                [externalPagination]=true
+                (rowClick)="onActivate($event)"
+                (buttonClick)="buttonClick($event)"
+                ></app-data-table>
+            </ng-container>
